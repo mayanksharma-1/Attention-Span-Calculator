@@ -1,11 +1,11 @@
 import cv2
 from GazeTracking import gaze_tracking
 import time
+import matplotlib.pyplot as plt 
+import numpy as np
 
 gaze = gaze_tracking.GazeTracking()
 start = time.time()
-
-data = {"distracted":0,"None":0}
 
 webcam = cv2.VideoCapture(0)
 total_distracted_time = 0
@@ -40,6 +40,14 @@ while True:
 webcam.release()
 cv2.destroyAllWindows()
 total_time = end - start # time(in secs) the program ran for 
-print(" total time : ",total_time)
-print(" total time you were distracted : ",total_distracted_time)
+
+distraction_percentage = (total_distracted_time/total_time)**10
+total_attention_time = total_time - total_distracted_time
+print(total_distracted_time)
+print(total_time)
+y = np.array([int(total_distracted_time),int(total_attention_time)])
+mylabels = ["Distracted Time", "Attention Time"]
+plt.pie(y, labels = mylabels)
+plt.show()
+
 
