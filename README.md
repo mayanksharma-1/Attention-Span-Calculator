@@ -8,7 +8,7 @@ This is a Python3 project that uses computer vision to Give you data based on ho
 Clone this project:
 
 ```shell
-git clone https://github.com/mayanksharma-1/HackTheMountain.git
+git clone https://github.com/mayanksharma-1/Attention-Span-Calculator.git
 ```
 this project makes use of these dependencies NumPy, OpenCV, Dlib and [Gaze Tracking Library by Antoinelame](https://github.com/antoinelame/GazeTracking)
 
